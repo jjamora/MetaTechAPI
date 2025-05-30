@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTC.API", "MTC.API\MTC.API.csproj", "{891E5C42-D703-4238-8B1B-92F554A2C84F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTC.Core", "MTC.Core\MTC.Core.csproj", "{66503C92-47DE-F737-36C3-F33830361C82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTC.Data", "MTC.Data\MTC.Data.csproj", "{72D62614-3BCE-7501-2D9E-64B611AE5B39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{891E5C42-D703-4238-8B1B-92F554A2C84F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{891E5C42-D703-4238-8B1B-92F554A2C84F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{891E5C42-D703-4238-8B1B-92F554A2C84F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{891E5C42-D703-4238-8B1B-92F554A2C84F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66503C92-47DE-F737-36C3-F33830361C82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66503C92-47DE-F737-36C3-F33830361C82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66503C92-47DE-F737-36C3-F33830361C82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66503C92-47DE-F737-36C3-F33830361C82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72D62614-3BCE-7501-2D9E-64B611AE5B39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72D62614-3BCE-7501-2D9E-64B611AE5B39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72D62614-3BCE-7501-2D9E-64B611AE5B39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72D62614-3BCE-7501-2D9E-64B611AE5B39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0413BDCD-D195-43D5-BF9D-C8F047EEF353}
+	EndGlobalSection
+EndGlobal
