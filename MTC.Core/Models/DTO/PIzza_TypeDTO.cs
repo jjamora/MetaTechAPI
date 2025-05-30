@@ -1,6 +1,6 @@
 ﻿namespace MTC.Core.Models.DTO
 {
-    public class PIzza_TypeDTO
+    public class Pizza_TypeDTO
     {
         public string? Id { get; }
         public string? Name { get; }
