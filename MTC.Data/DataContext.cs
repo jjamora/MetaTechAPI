@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MTC.Core.Models;
+using MTC.Data.Configurations;
 
 namespace MTC.Data
 {
@@ -26,7 +27,7 @@ namespace MTC.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-
+            builder.ApplyConfiguration(new CategoryConfiguration());
         }
     }
 }
