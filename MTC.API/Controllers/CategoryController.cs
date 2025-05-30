@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MTC.Core.Models;
+using MTC.Core.Mappers;
+using MTC.Core.Models.DTO;
 using MTC.Core.Services;
 
 namespace MTC.API.Controllers
@@ -8,31 +9,35 @@ namespace MTC.API.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        private readonly IServiceManager services;
+        private readonly IServiceManager _services;
         public CategoryController(IServiceManager services)
         {
-            this.services = services ?? throw new ArgumentNullException(nameof(services));
+            this._services = services ?? throw new ArgumentNullException(nameof(services));
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAllCategoriesAsync()
         {
             //get all categories
-            var categories = await services.CategoryService.GetAllAsync();
+            var categories = await _services.CategoryService.GetAllAsync();
             return Ok(categories);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetCategoryById(string id)
+        {
+            var category = await _services.CategoryService.GetByIdAsync(id);
+            return Ok(category);
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateCategory(CategoryDTO request)
         {
             //convert DTO to domain model
-            var convertToModel = new Category
-            {
-                Id = string.IsNullOrEmpty(request.Id) ? Guid.NewGuid().ToString() : request.Id,
-                Name = request.Name
-            };
+            var convertToModel = await CategoryMapper.DTOtoDomain(request);
 
-            await services.CategoryService.Create(convertToModel);
+            //create category
+            await _services.CategoryService.Create(convertToModel!);
             return Ok(convertToModel);
         }
     }
