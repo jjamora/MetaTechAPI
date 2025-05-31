@@ -15,8 +15,8 @@ namespace MTC.Core.Mappers
                 return await Task.FromResult(new Order
                 {
                     Id = model.Id!,
-                    Date = model.Date,
-                    Time = model.Time
+                    Date = model.Date!,
+                    Time = model.Time!
                 });
             }
             catch
