@@ -41,5 +41,16 @@ namespace MTC.API.Controllers
             await _services.CategoryService.Create(convertToModel!);
             return Ok(convertToModel);
         }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateCategory(CategoryDTO request)
+        {
+            //convert DTO to domain model
+            var convertToModel = await CategoryMapper.DTOtoDomain(request);
+
+            //update category
+            await _services.CategoryService.Update(convertToModel!);
+            return Ok(convertToModel);
+        }
     }
 }

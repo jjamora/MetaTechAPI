@@ -8,5 +8,6 @@ namespace MTC.Core.Services
         Task<IEnumerable<Order_Detail>> GetAllByOrderIdAsync(string orderId);
 
         Task<Order_Detail> Create(Order_Detail orderDetail);
+        Task<Order_Detail> Update(Order_Detail orderDetail);
     }
 }

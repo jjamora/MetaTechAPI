@@ -32,5 +32,12 @@ namespace MTC.Data.Services
             var result = await repository.CategoryRepository.GetByIdAsync(id);
             return result!;
         }
+
+        public async Task<Category> Update(Category category)
+        {
+            await repository.CategoryRepository.Update(category);
+            await repository.CommitAsync();
+            return category;
+        }
     }
 }

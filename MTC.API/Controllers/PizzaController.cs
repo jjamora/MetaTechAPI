@@ -50,5 +50,16 @@ namespace MTC.API.Controllers
             await _services.PizzaService.Create(convertToModel!);
             return Ok(convertToModel);
         }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdatePizza(PizzaDTO request)
+        {
+            //convert DTO to domain model
+            var convertToModel = await PizzaMapper.DTOtoDomain(request);
+
+            //update Pizza
+            await _services.PizzaService.Update(convertToModel!);
+            return Ok(convertToModel);
+        }
     }
 }

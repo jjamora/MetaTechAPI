@@ -38,5 +38,12 @@ namespace MTC.Data.Services
             var result = await repository.OrderRepository.GetByIdAsync(id);
             return result!;
         }
+
+        public async Task<Order> Update(Order order)
+        {
+            await repository.OrderRepository.Update(order);
+            await repository.CommitAsync();
+            return order;
+        }
     }
 }

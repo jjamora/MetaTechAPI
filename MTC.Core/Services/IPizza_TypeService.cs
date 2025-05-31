@@ -9,5 +9,6 @@ namespace MTC.Core.Services
         Task<IEnumerable<Pizza_Type>> GetAllPagingAsync(PageParameter param);
 
         Task<Pizza_Type> Create(Pizza_Type pizzaType);
+        Task<Pizza_Type> Update(Pizza_Type pizzaType);
     }
 }

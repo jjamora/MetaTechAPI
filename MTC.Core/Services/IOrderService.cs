@@ -9,5 +9,6 @@ namespace MTC.Core.Services
         Task<IEnumerable<Order>> GetAllPagingAsync(PageParameter param);
 
         Task<Order> Create(Order order);
+        Task<Order> Update(Order order);
     }
 }

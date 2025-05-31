@@ -50,5 +50,16 @@ namespace MTC.API.Controllers
             await _services.OrderService.Create(convertToModel!);
             return Ok(convertToModel);
         }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateOrder(OrderDTO request)
+        {
+            //convert DTO to domain model
+            var convertToModel = await OrderMapper.DTOtoDomain(request);
+
+            //update Order
+            await _services.OrderService.Update(convertToModel!);
+            return Ok(convertToModel);
+        }
     }
 }

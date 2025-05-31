@@ -38,5 +38,12 @@ namespace MTC.Data.Services
             var result = await repository.PizzaTypeRepository.GetByIdAsync(id);
             return result!;
         }
+
+        public async Task<Pizza_Type> Update(Pizza_Type pizzaType)
+        {
+            await repository.PizzaTypeRepository.Update(pizzaType);
+            await repository.CommitAsync();
+            return pizzaType;
+        }
     }
 }

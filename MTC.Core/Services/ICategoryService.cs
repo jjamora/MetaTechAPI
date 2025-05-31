@@ -8,5 +8,6 @@ namespace MTC.Core.Services
         Task<IEnumerable<Category>> GetAllAsync();
 
         Task<Category> Create(Category category);
+        Task<Category> Update(Category category);
     }
 }
