@@ -24,6 +24,7 @@ namespace MTC.API.Controllers
         }
 
         [HttpGet]
+        [Route("GetPizza_TypeById")]
         public async Task<IActionResult> GetPizza_TypeById(string id)
         {
             var Pizza_Type = await _services.PizzaTypeService.GetByIdAsync(id);

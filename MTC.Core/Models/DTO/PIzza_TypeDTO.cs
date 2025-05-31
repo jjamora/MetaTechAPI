@@ -2,9 +2,9 @@
 {
     public class Pizza_TypeDTO
     {
-        public string? Id { get; }
-        public string? Name { get; }
-        public string? CategoryId { get; }
-        public string? Ingredients { get; }
+        public string? Id { get; set; }
+        public string? Name { get; set; }
+        public string? CategoryId { get; set; }
+        public string? Ingredients { get; set; }
     }
 }

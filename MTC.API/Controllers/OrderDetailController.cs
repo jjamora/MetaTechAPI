@@ -16,6 +16,7 @@ namespace MTC.API.Controllers
         }
 
         [HttpGet]
+        [Route("GetAllOrderDetailsByIdAsync")]
         public async Task<IActionResult> GetAllOrderDetailsByIdAsync(string id)
         {
             //get all order details
@@ -24,6 +25,7 @@ namespace MTC.API.Controllers
         }
 
         [HttpGet]
+        [Route("GetOrder_DetailById")]
         public async Task<IActionResult> GetOrder_DetailById(string id)
         {
             var Order_Detail = await _services.Order_DetailService.GetByIdAsync(id);

@@ -2,8 +2,8 @@
 {
     public class OrderDTO
     {
-        public string? Id { get; }
-        public DateOnly Date { get; }
-        public TimeOnly Time { get; }
+        public string? Id { get; set; }
+        public DateOnly Date { get; set; }
+        public TimeOnly Time { get; set; }
     }
 }

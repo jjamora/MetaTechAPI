@@ -2,9 +2,9 @@
 {
     public class Order_DetailDTO
     {
-        public string? Id { get; }
-        public string? Order_Id { get; }
-        public string? Pizza_Id { get; }
-        public int Quantity { get; }
+        public string? Id { get; set; }
+        public string? Order_Id { get; set; }
+        public string? Pizza_Id { get; set; }
+        public int Quantity { get; set; }
     }
 }

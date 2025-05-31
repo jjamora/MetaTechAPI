@@ -24,6 +24,7 @@ namespace MTC.API.Controllers
         }
 
         [HttpGet]
+        [Route("GetCategoryById")]
         public async Task<IActionResult> GetCategoryById(string id)
         {
             var category = await _services.CategoryService.GetByIdAsync(id);

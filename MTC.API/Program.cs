@@ -20,18 +20,25 @@ builder.Services.AddScoped<IServiceManager, ServiceManager>();
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(options => {
+    options.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
+    options.IgnoreObsoleteActions();
+    options.IgnoreObsoleteProperties();
+    options.CustomSchemaIds(type => type.FullName);
+});
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors(options => { options.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod(); });
 app.UseAuthorization();
 
 app.MapControllers();

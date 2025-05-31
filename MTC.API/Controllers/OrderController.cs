@@ -24,6 +24,7 @@ namespace MTC.API.Controllers
         }
 
         [HttpGet]
+        [Route("GetOrderById")]
         public async Task<IActionResult> GetOrderById(string id)
         {
             var Order = await _services.OrderService.GetByIdAsync(id);
