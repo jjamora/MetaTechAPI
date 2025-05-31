@@ -21,6 +21,17 @@ namespace MTC.Data.Repositories
             return list!;
         }
 
+        public async Task<IEnumerable<Pizza_Type>> GetAllPagingAsync(PageParameter param)
+        {
+            //fetch all pizzas in the database
+            var list = await context.Pizza_Types
+                .Include(t => t.Category)
+                .Skip((param.PageNumber - 1) * param.PageSize)
+                .Take(param.PageSize)
+                .ToListAsync();
+            return list!;
+        }
+
         public async Task<Pizza_Type> GetByIdAsync(string id)
         {
             //fetch pizza in the database by Id

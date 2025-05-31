@@ -28,8 +28,8 @@ namespace MTC.API.Controllers
         [Route("GetOrder_DetailById")]
         public async Task<IActionResult> GetOrder_DetailById(string id)
         {
-            var Order_Detail = await _services.Order_DetailService.GetByIdAsync(id);
-            return Ok(Order_Detail);
+            var detail = await _services.Order_DetailService.GetByIdAsync(id);
+            return Ok(detail);
         }
 
         [HttpPost]

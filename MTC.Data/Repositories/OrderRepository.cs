@@ -15,14 +15,29 @@ namespace MTC.Data.Repositories
         public async Task<IEnumerable<Order>> GetAllAsync()
         {
             //fetch all orders in the database
-            var list = await context.Orders.ToListAsync();
+            var list = await context.Orders
+                .Include(o => o.Details)
+                .ToListAsync();
+            return list!;
+        }
+
+        public async Task<IEnumerable<Order>> GetAllPagingAsync(PageParameter param)
+        {
+            //fetch all orders in the database by pagination
+            var list = await context.Orders
+                .Include(o => o.Details)
+                .Skip((param.PageNumber -1) * param.PageSize)
+                .Take(param.PageSize)
+                .ToListAsync();
             return list!;
         }
 
         public async Task<Order> GetByIdAsync(string id)
         {
             //fetch orders in the database by Id
-            var result = await context.Orders.FirstOrDefaultAsync(c => c.Id == id);
+            var result = await context.Orders
+                .Include(o => o.Details)
+                .FirstOrDefaultAsync(c => c.Id == id);
             return result ?? throw new ArgumentNullException(nameof(result));
         }
     }

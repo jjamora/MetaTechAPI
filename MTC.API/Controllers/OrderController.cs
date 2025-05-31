@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MTC.Core.Mappers;
+using MTC.Core.Models;
 using MTC.Core.Models.DTO;
 using MTC.Core.Services;
 
@@ -29,6 +30,14 @@ namespace MTC.API.Controllers
         {
             var Order = await _services.OrderService.GetByIdAsync(id);
             return Ok(Order);
+        }
+
+        [HttpGet]
+        [Route("GetAllPagingAsync")]
+        public async Task<IActionResult> GetAllPagingAsync(PageParameter param)
+        {
+            var order = await _services.OrderService.GetAllPagingAsync(param);
+            return Ok(order);
         }
 
         [HttpPost]

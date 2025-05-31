@@ -6,5 +6,6 @@ namespace MTC.Core.Repositories
     {
         Task<Order> GetByIdAsync(string id);
         Task<IEnumerable<Order>> GetAllAsync();
+        Task<IEnumerable<Order>> GetAllPagingAsync(PageParameter param);
     }
 }

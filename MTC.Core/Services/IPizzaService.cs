@@ -6,6 +6,7 @@ namespace MTC.Core.Services
     {
         Task<Pizza> GetByIdAsync(string id);
         Task<IEnumerable<Pizza>> GetAllAsync();
+        Task<IEnumerable<Pizza>> GetAllPagingAsync(PageParameter param);
 
         Task<Pizza> Create(Pizza pizza);
     }

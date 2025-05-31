@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MTC.Core.Mappers;
+using MTC.Core.Models;
 using MTC.Core.Models.DTO;
 using MTC.Core.Services;
 
@@ -27,8 +28,16 @@ namespace MTC.API.Controllers
         [Route("GetPizza_TypeById")]
         public async Task<IActionResult> GetPizza_TypeById(string id)
         {
-            var Pizza_Type = await _services.PizzaTypeService.GetByIdAsync(id);
-            return Ok(Pizza_Type);
+            var type = await _services.PizzaTypeService.GetByIdAsync(id);
+            return Ok(type);
+        }
+
+        [HttpGet]
+        [Route("GetAllPagingAsync")]
+        public async Task<IActionResult> GetAllPagingAsync(PageParameter param)
+        {
+            var types = await _services.PizzaTypeService.GetAllPagingAsync(param);
+            return Ok(types);
         }
 
         [HttpPost]
