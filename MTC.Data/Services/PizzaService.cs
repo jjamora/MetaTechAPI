@@ -27,6 +27,12 @@ namespace MTC.Data.Services
             return list!;
         }
 
+        public async Task<IEnumerable<Pizza>> GetAllPagingAsync(PageParameter param)
+        {
+            var list = await repository.PizzaRepository.GetAllPagingAsync(param);
+            return list!;
+        }
+
         public async Task<Pizza> GetByIdAsync(string id)
         {
             var result = await repository.PizzaRepository.GetByIdAsync(id);

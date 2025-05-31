@@ -27,6 +27,12 @@ namespace MTC.Data.Services
             return list!;
         }
 
+        public async Task<IEnumerable<Order>> GetAllPagingAsync(PageParameter param)
+        {
+            var list = await repository.OrderRepository.GetAllPagingAsync(param);
+            return list!;
+        }
+
         public async Task<Order> GetByIdAsync(string id)
         {
             var result = await repository.OrderRepository.GetByIdAsync(id);
